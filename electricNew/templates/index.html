@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Electric Management{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card animate-on-scroll">
+            <div class="card-header">
+                <h2 class="text-center">Electricity Consumption Calculator</h2>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="{{ url_for('about') }}" class="needs-validation" novalidate>
+                    <div class="mb-3">
+                        <label for="previous" class="form-label">Previous Reading</label>
+                        <input type="number" class="form-control" id="previous" name="previous" required>
+                        <div class="invalid-feedback">Please provide previous reading.</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="current" class="form-label">Current Reading</label>
+                        <input type="number" class="form-control" id="current" name="current" required>
+                        <div class="invalid-feedback">Please provide current reading.</div>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Calculate</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        {% if result %}
+        <div class="card mt-4 animate-on-scroll">
+            <div class="card-header">
+                <h3 class="text-center">Calculation Results</h3>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <tbody>
+                            <tr>
+                                <th>Total Units</th>
+                                <td>{{ result.units }}</td>
+                            </tr>
+                            <tr>
+                                <th>Amount</th>
+                                <td>{{ result.amount }}</td>
+                            </tr>
+                            <!-- Add more result fields as needed -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+<script>
+// Form validation
+(function () {
+    'use strict'
+    var forms = document.querySelectorAll('.needs-validation')
+    Array.prototype.slice.call(forms).forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+            }
+            form.classList.add('was-validated')
+        }, false)
+    })
+})()
+</script>
+{% endblock %}

@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+
+{% block title %}Solar Panel Installation Projects - Clochanix{% endblock %}
+
+{% block extra_css %}
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/projectss.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="project-container">
+    <div class="project-header solar-header">
+        <h1>Solar Panel Installations</h1>
+        <p class="project-subtitle">Renewable Energy Solutions for a Sustainable Future</p>
+    </div>
+
+    <button id="back-button" class="back-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+            <path d="M19 12H5"></path>
+            <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back
+    </button>
+
+    <section class="project-details">
+        <h2>Commercial Solar Power System Installation</h2>
+        <div class="project-intro">
+            <p>This comprehensive solar installation project delivers sustainable energy solutions through advanced photovoltaic technology. The system provides reliable power generation while significantly reducing electricity costs and environmental impact.</p>
+        </div>
+        
+        <div class="specs-grid">
+            <div class="specs-item">
+                <h3>Project Overview</h3>
+                <ul>
+                    <li><strong>Client:</strong> MR. BORISE</li>
+                    <li><strong>Industry:</strong> Commercial Solar</li>
+                    <li><strong>System Size:</strong> 10kW</li>
+                    <li><strong>Annual Output:</strong> 15,000 kWh</li>
+                    <li><strong>CO2 Reduction:</strong> 10.5 tons/year</li>
+                </ul>
+            </div>
+
+            <div class="specs-item">
+                <h3>Technical Details</h3>
+                <ul>
+                    <li><strong>Solar Panels:</strong> 30 x 335W Monocrystalline</li>
+                    <li><strong>Inverter:</strong> 12kW Hybrid Inverter</li>
+                    <li><strong>Battery Storage:</strong> 15kWh Lithium-ion</li>
+                    <li><strong>Mounting:</strong> Roof-mounted System</li>
+                    <li><strong>Monitoring:</strong> Smart Energy Management</li>
+                </ul>
+            </div>
+
+            <div class="specs-item">
+                <h3>Implementation</h3>
+                <ul>
+                    <li>Professional site assessment</li>
+                    <li>Custom system design</li>
+                    <li>Expert installation</li>
+                    <li>Safety compliance</li>
+                    <li>Performance testing</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="work-phases">
+        <h2>Project Phases</h2>
+        <div class="phase-grid">
+            <div class="phase-item">
+                <span class="phase-number">01</span>
+                <h3>Site Assessment</h3>
+                <p>Comprehensive analysis of location, roof structure, and solar potential</p>
+            </div>
+            <div class="phase-item">
+                <span class="phase-number">02</span>
+                <h3>System Design</h3>
+                <p>Custom solar solution designed for optimal energy generation</p>
+            </div>
+            <div class="phase-item">
+                <span class="phase-number">03</span>
+                <h3>Installation</h3>
+                <p>Professional mounting and electrical integration</p>
+            </div>
+            <div class="phase-item">
+                <span class="phase-number">04</span>
+                <h3>Testing</h3>
+                <p>Rigorous system testing and performance verification</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="image-gallery">
+        <img src="{{ url_for('static', filename='images/solar2.jpg') }}" alt="Solar Panel Installation" data-fullsize="{{ url_for('static', filename='images/solar2.jpg') }}">
+        <img src="{{ url_for('static', filename='images/solar3.jpg') }}" alt="Inverter Setup" data-fullsize="{{ url_for('static', filename='images/solar3.jpg') }}">
+        <img src="{{ url_for('static', filename='images/solarpanelinstallation.jpg') }}" alt="Battery Storage" data-fullsize="{{ url_for('static', filename='images/solarpanelinstallation.jpg') }}">
+        <img src="{{ url_for('static', filename='images/solar6.jpg') }}" alt="Completed System" data-fullsize="{{ url_for('static', filename='images/solar6.jpg') }}">
+    </section>
+
+    <section class="video-container">
+        <div class="video-container">
+            <video width="640" height="360" controls>
+                <source src="{{ url_for('static', filename='videos/lightinginstallationv3.mp4') }}" type="video/mp4">
+                <source src="{{ url_for('static', filename='videos/lightinginstallationv3.webm') }}" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+        </div>   
+    </section>
+
+    <section class="project-outcomes">
+        <h2>Project Benefits</h2>
+        <div class="outcomes-grid">
+            <div class="outcome-item">
+                <h3>Energy Savings</h3>
+                <p>70% reduction in electricity costs</p>
+            </div>
+            <div class="outcome-item">
+                <h3>Environmental Impact</h3>
+                <p>10.5 tons CO2 reduction annually</p>
+            </div>
+            <div class="outcome-item">
+                <h3>Power Reliability</h3>
+                <p>24/7 backup power capability</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-location">
+        <h2>Project Location</h2>
+        <p>Installation completed in <strong>Limbe, Cameroon</strong>, isokolo</p>
+        <p>Project completion: <strong>2024</strong></p>
+        <div class="contact-info">
+            <h3>Solar Installation Inquiries</h3>
+            <p>For solar power solutions and consultations:</p>
+            <p><strong>Phone:</strong> +237 680-547-526</p>
+            <p><strong>Email:</strong> clovissamba191@gmail.com</p>
+        </div>
+    </section>
+</div>
+
+<div id="lightbox" class="lightbox">
+    <img src="" alt="Full Size Image">
+    <span id="lightbox-close">&times;</span>
+    <span id="lightbox-prev">&#10094;</span>
+    <span id="lightbox-next">&#10095;</span>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/projectss.js') }}"></script>
+{% endblock %}
